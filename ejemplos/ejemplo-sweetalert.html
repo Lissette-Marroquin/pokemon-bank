@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo SweetAlert</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-5 text-center">
+
+  <!-- Ejemplo 1: SweetAlert reemplaza al alert() normal con ventanas más bonitas -->
+  <h1 class="h4">Ejemplo de SweetAlert</h1>
+  <p>Simula la confirmación de un retiro en el cajero.</p>
+  <button id="btnRetiro" class="btn btn-danger">Retirar $20.00</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+  <script>
+    document.getElementById("btnRetiro").addEventListener("click", function () {
+      // Primero pregunta si desea continuar
+      swal({
+        title: "¿Confirmar retiro?",
+        text: "Se retirarán $20.00 de su cuenta",
+        icon: "warning",
+        buttons: ["Cancelar", "Sí, retirar"]
+      }).then(function (confirmo) {
+        if (confirmo) {
+          swal("¡Listo!", "Retire su dinero", "success");
+        } else {
+          swal("Operación cancelada");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
