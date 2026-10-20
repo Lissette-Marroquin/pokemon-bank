@@ -1,0 +1,198 @@
+/* =========================================
+   Pokémon Bank - Estilos generales
+   Framework: Bootstrap 4.6 (desde CDN)
+   Aquí solo van los estilos propios del proyecto
+   ========================================= */
+
+/* Colores del proyecto (se usan en todo el sitio) */
+:root {
+  --rojo: #bd0010;
+  --rojo-oscuro: #98000c;
+  --verde: #087451;
+  --texto: #202a33;
+  --gris: #7a8792;
+  --fondo: #f4f7fb;
+  --celeste: #edf4fb;
+}
+
+body {
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+/* ---------- Clases reutilizables ---------- */
+
+.tarjeta {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(35, 55, 75, .08);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.etiqueta {
+  color: var(--gris);
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btn-rojo {
+  background: var(--rojo);
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-rojo:hover {
+  background: var(--rojo-oscuro);
+  color: #fff;
+}
+
+.positivo { color: var(--verde); font-weight: bold; }
+.negativo { color: var(--rojo); font-weight: bold; }
+
+/* ---------- Barra de navegación ---------- */
+
+.navbar {
+  background: #fff;
+  border-bottom: 3px solid var(--rojo);
+}
+
+.navbar-brand img {
+  width: 35px;
+  margin-right: 8px;
+}
+
+.navbar .nav-link.active {
+  color: var(--rojo) !important;
+  font-weight: bold;
+}
+
+/* ---------- Login ---------- */
+
+.login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.login .tarjeta {
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.login img {
+  width: 70px;
+}
+
+.pin {
+  font-size: 24px;
+  letter-spacing: 12px;
+  text-align: center;
+}
+
+/* Teclado numérico del cajero: 3 columnas */
+.teclado {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.teclado .btn {
+  font-size: 20px;
+  background: var(--celeste);
+}
+
+/* El botón OK del teclado se queda rojo */
+.teclado .btn-rojo {
+  background: var(--rojo);
+}
+
+.mensaje-error {
+  color: var(--rojo);
+  font-size: 14px;
+  min-height: 20px;
+}
+
+/* ---------- Pantalla de acciones ---------- */
+
+.saldo {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.btn-accion {
+  width: 100%;
+  padding: 20px 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background: #fff;
+  border: 2px solid var(--celeste);
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(35, 55, 75, .08);
+}
+
+.btn-accion:hover {
+  border-color: var(--rojo);
+}
+
+.btn-accion span {
+  display: block;
+  font-size: 30px;
+}
+
+/* ---------- Gráfico de barras (hecho solo con CSS) ---------- */
+
+.grafico {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 250px;
+  border-bottom: 2px solid var(--gris);
+}
+
+.barra {
+  width: 18%;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 5px;
+  border-radius: 6px 6px 0 0;
+}
+
+/* La altura de cada barra = cantidad de transacciones x 25% */
+.deposito { height: 75%;  background: var(--verde); }
+.retiro   { height: 50%;  background: var(--rojo); }
+.consulta { height: 25%;  background: #3286d8; }
+.servicio { height: 100%; background: #f4a51c; }
+
+.nombres-barras {
+  display: flex;
+  justify-content: space-around;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.nombres-barras span {
+  width: 18%;
+  text-align: center;
+}
+
+footer {
+  color: var(--gris);
+  font-size: 12px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* ---------- Celulares ---------- */
+@media (max-width: 576px) {
+  .saldo { font-size: 28px; }
+  .grafico { height: 180px; }
+  .nombres-barras { font-size: 11px; }
+}
