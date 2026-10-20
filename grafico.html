@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon Bank | Gráfico</title>
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-light">
+    <a class="navbar-brand" href="acciones.html"><img src="images/logo.png" alt="Logo">Pokémon Bank</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="acciones.html">Acciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="historial.html">Historial</a></li>
+        <li class="nav-item"><a class="nav-link active" href="grafico.html">Gráfico</a></li>
+        <li class="nav-item"><a class="nav-link text-danger" href="index.html">Salir</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PANTALLA 4: GRÁFICO DE TRANSACCIONES -->
+  <main class="container mt-4">
+    <h1 class="h4">Análisis de transacciones</h1>
+    <p class="text-muted">Octubre 2026 · Total: 10 transacciones</p>
+
+    <div class="row">
+      <!-- Gráfico 1: cantidad de transacciones por tipo (barras con CSS) -->
+      <div class="col-lg-7">
+        <div class="tarjeta">
+          <h2 class="h6">Número de transacciones por tipo</h2>
+          <div class="grafico">
+            <div class="barra deposito">3</div>
+            <div class="barra retiro">2</div>
+            <div class="barra consulta">1</div>
+            <div class="barra servicio">4</div>
+          </div>
+          <div class="nombres-barras">
+            <span>Depósitos</span>
+            <span>Retiros</span>
+            <span>Consultas</span>
+            <span>Servicios</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gráfico 2: gastos en servicios (barras de progreso de Bootstrap) -->
+      <div class="col-lg-5">
+        <div class="tarjeta">
+          <h2 class="h6">Gastos en servicios ($60.00)</h2>
+
+          <p class="mb-1">Energía eléctrica · $25.50</p>
+          <div class="progress mb-3">
+            <div class="progress-bar bg-warning" style="width: 42.5%">42.5%</div>
+          </div>
+
+          <p class="mb-1">Internet · $20.00</p>
+          <div class="progress mb-3">
+            <div class="progress-bar bg-info" style="width: 33.3%">33.3%</div>
+          </div>
+
+          <p class="mb-1">Agua potable · $8.50</p>
+          <div class="progress mb-3">
+            <div class="progress-bar bg-primary" style="width: 14.2%">14.2%</div>
+          </div>
+
+          <p class="mb-1">Telefonía · $6.00</p>
+          <div class="progress">
+            <div class="progress-bar bg-success" style="width: 10%">10%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>Pokémon Bank © 2026 · Cajero automático</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
