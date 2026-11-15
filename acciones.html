@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body data-protegida>
 
   <!-- Menú de navegación (se repite en las pantallas internas) -->
   <nav class="navbar navbar-expand-md navbar-light">
@@ -21,7 +21,7 @@
         <li class="nav-item"><a class="nav-link active" href="acciones.html">Acciones</a></li>
         <li class="nav-item"><a class="nav-link" href="historial.html">Historial</a></li>
         <li class="nav-item"><a class="nav-link" href="grafico.html">Gráfico</a></li>
-        <li class="nav-item"><a class="nav-link text-danger" href="index.html">Salir</a></li>
+        <li class="nav-item"><a class="nav-link text-danger salir" href="index.html">Salir</a></li>
       </ul>
     </div>
   </nav>
@@ -34,12 +34,12 @@
       <div class="row">
         <div class="col-md-6">
           <p class="etiqueta mb-0">Bienvenido</p>
-          <h2 class="h4">Ash Ketchum</h2>
-          <p class="mb-0">Cuenta N.º <strong>0987654321</strong></p>
+          <h2 class="h4" id="nombreUsuario">Ash Ketchum</h2>
+          <p class="mb-0">Cuenta N.º <strong id="cuentaUsuario">0987654321</strong></p>
         </div>
         <div class="col-md-6 text-md-right mt-3 mt-md-0">
           <p class="etiqueta mb-0">Saldo disponible</p>
-          <p class="saldo mb-0">$500.00</p>
+          <p class="saldo mb-0 saldoUsuario">$500.00</p>
         </div>
       </div>
     </div>
@@ -63,7 +63,7 @@
     </div>
 
     <div class="text-center">
-      <a href="index.html" class="btn btn-outline-danger">Salir de la sesión</a>
+      <a href="index.html" class="btn btn-outline-danger salir">Salir de la sesión</a>
     </div>
   </main>
 
@@ -83,10 +83,11 @@
         <div class="modal-body">
           <label for="montoDeposito">Monto a depositar ($)</label>
           <input type="number" id="montoDeposito" class="form-control" min="1" step="0.01" placeholder="0.00">
+          <p id="errorDeposito" class="mensaje-error"></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-rojo">Depositar</button>
+          <button type="button" class="btn btn-rojo" id="btnDepositar">Depositar</button>
         </div>
       </div>
     </div>
@@ -103,16 +104,17 @@
         <div class="modal-body">
           <p>Montos rápidos:</p>
           <div class="btn-group d-flex mb-3">
-            <button type="button" class="btn btn-outline-secondary">$20</button>
-            <button type="button" class="btn btn-outline-secondary">$40</button>
-            <button type="button" class="btn btn-outline-secondary">$100</button>
+            <button type="button" class="btn btn-outline-secondary monto-rapido" data-monto="20">$20</button>
+            <button type="button" class="btn btn-outline-secondary monto-rapido" data-monto="40">$40</button>
+            <button type="button" class="btn btn-outline-secondary monto-rapido" data-monto="100">$100</button>
           </div>
           <label for="montoRetiro">Otro monto ($)</label>
           <input type="number" id="montoRetiro" class="form-control" min="1" step="0.01" placeholder="0.00">
+          <p id="errorRetiro" class="mensaje-error"></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-rojo">Retirar</button>
+          <button type="button" class="btn btn-rojo" id="btnRetirar">Retirar</button>
         </div>
       </div>
     </div>
@@ -129,7 +131,7 @@
         <div class="modal-body text-center">
           <p class="mb-1">Ash Ketchum · Cuenta 0987654321</p>
           <p class="etiqueta mb-0">Su saldo actual es</p>
-          <p class="saldo positivo">$500.00</p>
+          <p class="saldo positivo saldoUsuario">$500.00</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-rojo" data-dismiss="modal">Aceptar</button>
@@ -159,10 +161,11 @@
           <input type="text" id="referencia" class="form-control mb-3" placeholder="Ej. 1234567">
           <label for="montoServicio">Monto a pagar ($)</label>
           <input type="number" id="montoServicio" class="form-control" min="1" step="0.01" placeholder="0.00">
+          <p id="errorServicio" class="mensaje-error"></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-rojo">Pagar</button>
+          <button type="button" class="btn btn-rojo" id="btnPagar">Pagar</button>
         </div>
       </div>
     </div>
@@ -171,5 +174,11 @@
   <!-- JavaScript de Bootstrap (necesario para el menú y las ventanas) -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Archivos propios: datos, validaciones, mensajes, comprobante y lógica de acciones -->
+  <script src="js/datos.js"></script>
+  <script src="js/validaciones.js"></script>
+  <script src="js/dialogos.js"></script>
+  <script src="js/comprobante.js"></script>
+  <script src="js/acciones.js"></script>
 </body>
 </html>

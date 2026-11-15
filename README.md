@@ -13,9 +13,9 @@ Propuesta de interfaz web (Front End) para un cajero automático.
 
 ## Estructura
 - `css/` - estilos propios
-- `js/` - teclado del login
+- `js/` - lógica en JavaScript: datos en LocalStorage, login, transacciones, validaciones, mensajes y comprobante
 - `images/` - logo
 - `ejemplos/` - ejemplos de librerías (SweetAlert y Chart.js)
 
 ## Tecnologías
-HTML5, CSS3 y Bootstrap 4.6 (responsive)
+HTML5, CSS3, Bootstrap 4.6 (responsive) y JavaScript con LocalStorage
