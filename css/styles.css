@@ -165,11 +165,11 @@ body {
   border-radius: 6px 6px 0 0;
 }
 
-/* La altura de cada barra = cantidad de transacciones x 25% */
-.deposito { height: 75%;  background: var(--verde); }
-.retiro   { height: 50%;  background: var(--rojo); }
-.consulta { height: 25%;  background: #3286d8; }
-.servicio { height: 100%; background: #f4a51c; }
+/* Altura de cada barra la asigna js/grafico.js según LocalStorage */
+.deposito { background: var(--verde); }
+.retiro   { background: var(--rojo); }
+.consulta { background: #3286d8; }
+.servicio { background: #f4a51c; }
 
 .nombres-barras {
   display: flex;
