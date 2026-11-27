@@ -28,7 +28,7 @@
   <!-- PANTALLA 4: GRÁFICO DE TRANSACCIONES -->
   <main class="container mt-4">
     <h1 class="h4">Análisis de transacciones</h1>
-    <p class="text-muted">Octubre 2026 · Total: 10 transacciones</p>
+    <p id="resumenGrafico" class="text-muted"></p>
 
     <div class="row">
       <!-- Gráfico 1: cantidad de transacciones por tipo (barras con CSS) -->
@@ -36,10 +36,10 @@
         <div class="tarjeta">
           <h2 class="h6">Número de transacciones por tipo</h2>
           <div class="grafico">
-            <div class="barra deposito">3</div>
-            <div class="barra retiro">2</div>
-            <div class="barra consulta">1</div>
-            <div class="barra servicio">4</div>
+            <div class="barra deposito">0</div>
+            <div class="barra retiro">0</div>
+            <div class="barra consulta">0</div>
+            <div class="barra servicio">0</div>
           </div>
           <div class="nombres-barras">
             <span>Depósitos</span>
@@ -53,27 +53,8 @@
       <!-- Gráfico 2: gastos en servicios (barras de progreso de Bootstrap) -->
       <div class="col-lg-5">
         <div class="tarjeta">
-          <h2 class="h6">Gastos en servicios ($60.00)</h2>
-
-          <p class="mb-1">Energía eléctrica · $25.50</p>
-          <div class="progress mb-3">
-            <div class="progress-bar bg-warning" style="width: 42.5%">42.5%</div>
-          </div>
-
-          <p class="mb-1">Internet · $20.00</p>
-          <div class="progress mb-3">
-            <div class="progress-bar bg-info" style="width: 33.3%">33.3%</div>
-          </div>
-
-          <p class="mb-1">Agua potable · $8.50</p>
-          <div class="progress mb-3">
-            <div class="progress-bar bg-primary" style="width: 14.2%">14.2%</div>
-          </div>
-
-          <p class="mb-1">Telefonía · $6.00</p>
-          <div class="progress">
-            <div class="progress-bar bg-success" style="width: 10%">10%</div>
-          </div>
+          <h2 id="tituloServicios" class="h6">Gastos en servicios</h2>
+          <div id="listaServicios"></div>
         </div>
       </div>
     </div>
@@ -84,5 +65,6 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/datos.js"></script>
+  <script src="js/grafico.js"></script>
 </body>
 </html>
