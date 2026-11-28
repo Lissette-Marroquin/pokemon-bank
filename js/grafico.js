@@ -49,21 +49,27 @@ function mostrarResumen(transacciones) {
   el.textContent = periodoResumen(transacciones) + " · Total: " + total + " " + etiqueta;
 }
 
+// Gráfico de barras con Chart.js: número de transacciones de cada tipo
 function mostrarBarrasPorTipo(conteos) {
+  const etiquetas = ["Depósitos", "Retiros", "Consultas", "Servicios"];
   const valores = TIPOS_GRAFICO.map(function (item) {
     return conteos[item.tipo];
   });
-  const max = Math.max.apply(null, valores.concat([0]));
 
-  TIPOS_GRAFICO.forEach(function (item) {
-    const barra = document.querySelector(".barra." + item.clase);
-    if (!barra) return;
-    const n = conteos[item.tipo];
-    barra.textContent = n;
-    if (max > 0 && n > 0) {
-      barra.style.height = (n / max) * 100 + "%";
-    } else {
-      barra.style.height = "0%";
+  new Chart(document.getElementById("graficoTipos"), {
+    type: "bar",
+    data: {
+      labels: etiquetas,
+      datasets: [{
+        label: "Transacciones",
+        data: valores,
+        // Verde para depósitos, rojo para retiros, gris para consultas y amarillo para servicios
+        backgroundColor: ["#087451", "#bd0010", "#6c757d", "#e8a33d"]
+      }]
+    },
+    options: {
+      plugins: { legend: { display: false } },
+      scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } }
     }
   });
 }
