@@ -28,32 +28,32 @@
   <!-- PANTALLA 3: HISTORIAL DE TRANSACCIONES -->
   <main class="container mt-4">
     <h1 class="h4">Historial de transacciones</h1>
-    <p class="text-muted">Ash Ketchum · Cuenta 0987654321</p>
+    <p id="datosCuenta" class="text-muted"></p>
 
-    <!-- Resumen por tipo -->
+    <!-- Resumen por tipo (lo llena js/historial.js) -->
     <div class="row">
       <div class="col-6 col-md-3">
-        <div class="tarjeta">
-          <p class="etiqueta mb-1">Depósitos (3)</p>
-          <p class="h5 positivo mb-0">+ $100.00</p>
+        <div class="tarjeta" id="resumenDepositos">
+          <p class="etiqueta mb-1">Depósitos (<span class="cantidad">0</span>)</p>
+          <p class="h5 positivo mb-0 total">$0.00</p>
         </div>
       </div>
       <div class="col-6 col-md-3">
-        <div class="tarjeta">
-          <p class="etiqueta mb-1">Retiros (2)</p>
-          <p class="h5 negativo mb-0">- $40.00</p>
+        <div class="tarjeta" id="resumenRetiros">
+          <p class="etiqueta mb-1">Retiros (<span class="cantidad">0</span>)</p>
+          <p class="h5 negativo mb-0 total">$0.00</p>
         </div>
       </div>
       <div class="col-6 col-md-3">
-        <div class="tarjeta">
-          <p class="etiqueta mb-1">Servicios (4)</p>
-          <p class="h5 negativo mb-0">- $60.00</p>
+        <div class="tarjeta" id="resumenServicios">
+          <p class="etiqueta mb-1">Servicios (<span class="cantidad">0</span>)</p>
+          <p class="h5 negativo mb-0 total">$0.00</p>
         </div>
       </div>
       <div class="col-6 col-md-3">
-        <div class="tarjeta">
-          <p class="etiqueta mb-1">Consultas (1)</p>
-          <p class="h5 mb-0">$0.00</p>
+        <div class="tarjeta" id="resumenConsultas">
+          <p class="etiqueta mb-1">Consultas (<span class="cantidad">0</span>)</p>
+          <p class="h5 mb-0 total">$0.00</p>
         </div>
       </div>
     </div>
@@ -69,72 +69,13 @@
             <th class="text-right">Monto</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>14/10/2026</td>
-            <td>Depósito</td>
-            <td>Depósito en efectivo</td>
-            <td class="text-right positivo">+ $20.00</td>
-          </tr>
-          <tr>
-            <td>12/10/2026</td>
-            <td>Pago de servicio</td>
-            <td>Telefonía</td>
-            <td class="text-right negativo">- $6.00</td>
-          </tr>
-          <tr>
-            <td>10/10/2026</td>
-            <td>Retiro</td>
-            <td>Retiro en cajero</td>
-            <td class="text-right negativo">- $15.00</td>
-          </tr>
-          <tr>
-            <td>08/10/2026</td>
-            <td>Pago de servicio</td>
-            <td>Agua potable</td>
-            <td class="text-right negativo">- $8.50</td>
-          </tr>
-          <tr>
-            <td>07/10/2026</td>
-            <td>Consulta de saldo</td>
-            <td>Saldo consultado</td>
-            <td class="text-right">$0.00</td>
-          </tr>
-          <tr>
-            <td>05/10/2026</td>
-            <td>Depósito</td>
-            <td>Depósito en efectivo</td>
-            <td class="text-right positivo">+ $30.00</td>
-          </tr>
-          <tr>
-            <td>04/10/2026</td>
-            <td>Pago de servicio</td>
-            <td>Internet</td>
-            <td class="text-right negativo">- $20.00</td>
-          </tr>
-          <tr>
-            <td>03/10/2026</td>
-            <td>Retiro</td>
-            <td>Retiro en cajero</td>
-            <td class="text-right negativo">- $25.00</td>
-          </tr>
-          <tr>
-            <td>02/10/2026</td>
-            <td>Pago de servicio</td>
-            <td>Energía eléctrica</td>
-            <td class="text-right negativo">- $25.50</td>
-          </tr>
-          <tr>
-            <td>01/10/2026</td>
-            <td>Depósito</td>
-            <td>Depósito en efectivo</td>
-            <td class="text-right positivo">+ $50.00</td>
-          </tr>
+        <tbody id="tablaHistorial">
+          <!-- Las filas las agrega js/historial.js desde LocalStorage -->
         </tbody>
       </table>
     </div>
 
-    <p class="text-right"><strong>Saldo actual: $500.00</strong></p>
+    <p class="text-right"><strong>Saldo actual: <span id="saldoActual"></span></strong></p>
   </main>
 
   <footer>Pokémon Bank © 2026 · Cajero automático</footer>
@@ -142,5 +83,6 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/datos.js"></script>
+  <script src="js/historial.js"></script>
 </body>
 </html>

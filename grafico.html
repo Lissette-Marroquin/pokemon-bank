@@ -31,22 +31,11 @@
     <p id="resumenGrafico" class="text-muted"></p>
 
     <div class="row">
-      <!-- Gráfico 1: cantidad de transacciones por tipo (barras con CSS) -->
+      <!-- Gráfico 1: cantidad de transacciones por tipo (Chart.js) -->
       <div class="col-lg-7">
         <div class="tarjeta">
           <h2 class="h6">Número de transacciones por tipo</h2>
-          <div class="grafico">
-            <div class="barra deposito">0</div>
-            <div class="barra retiro">0</div>
-            <div class="barra consulta">0</div>
-            <div class="barra servicio">0</div>
-          </div>
-          <div class="nombres-barras">
-            <span>Depósitos</span>
-            <span>Retiros</span>
-            <span>Consultas</span>
-            <span>Servicios</span>
-          </div>
+          <canvas id="graficoTipos" height="220"></canvas>
         </div>
       </div>
 
@@ -64,6 +53,9 @@
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Chart.js: gráfico de transacciones por tipo -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+
   <script src="js/datos.js"></script>
   <script src="js/grafico.js"></script>
 </body>
